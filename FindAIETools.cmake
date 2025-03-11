@@ -66,7 +66,9 @@
 
 include(FindPackageHandleStandardArgs)
 
-cmake_policy(SET CMP0144 NEW)
+if(POLICY CMP0144)
+  cmake_policy(SET CMP0144 NEW)
+endif()
 
 list(LENGTH AIETools_FIND_COMPONENTS componentsSize)
 if(componentsSize EQUAL 0)
